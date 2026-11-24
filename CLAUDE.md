@@ -30,6 +30,11 @@ Para ver: extensão Live Server no VS Code, ou abrir o `index.html` no navegador
 - Usuária quer visual premium, interatividade leve, e as 10 heurísticas de Nielsen (mapa na conversa: status visível, linguagem do usuário, controle, consistência, prevenção de erro, reconhecimento, eficiência, minimalismo, recuperação de erro, ajuda/FAQ).
 - Revelar ao rolar: tudo começa visível; o efeito só liga na primeira rolagem (`rv-on`), para nada sumir em visualizadores sem rolagem.
 - Não usar: verde-petróleo ou paletas fora da marca, letras que diminuem de tamanho, visual "seco" só de tipografia.
+- Destaques (aprovados): atendimento em casa e pilates na gestação no formato original, só com título maior e botão cheio. Usuária NÃO gostou de cartões coloridos com ícone e etiqueta ("cara de template") nem do verde-menta/rosado claro nesses blocos.
+- Benefícios: logos reais de Gympass/Wellhub e TotalPass (`img/logo-gympass.png`, `img/logo-totalpass.webp`), recortados dos posts da clínica.
+
+## Próximo ajuste (pedido da usuária)
+- Trocar a fonte dos títulos: ela não está gostando do itálico (palavras de destaque em Bodoni Moda itálico). Testar em branch antes.
 
 ## Pendências (confirmar com a clínica)
 - Nome e função da profissional de jaleco branco (está como "Equipe clínica") e nome da dentista.

@@ -471,6 +471,38 @@ footer a:hover{color:var(--cream);text-decoration:underline;text-underline-offse
 
 /* ===== responsivo ===== */
 .m-only,.gal-more{display:none}
+
+/* ===== TESTE: destaques (domicílio, gestação, benefícios). Mobile first. ===== */
+.tag{display:inline-flex;align-items:center;gap:8px;font:600 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase}
+.tag::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+
+/* benefícios aceitos */
+.perks{display:grid;gap:22px;margin-top:64px;padding:26px 22px;border-radius:var(--r-lg);background:var(--white);box-shadow:inset 0 0 0 1px var(--line),0 30px 60px -44px rgba(36,48,74,.5)}
+.perks .tag{color:var(--sage-d)}
+.perks h3{font-size:clamp(28px,7vw,42px);line-height:1.05;color:var(--navy);margin:8px 0 0}
+.perks p{font-size:16px;line-height:1.55;color:var(--ink-2);margin:0;max-width:46ch}
+.perks__logos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.perks__logos li{display:grid;place-items:center;min-height:96px;padding:16px;border-radius:var(--r);background:var(--cream);box-shadow:inset 0 0 0 1px var(--line);transition:transform .3s var(--ease),box-shadow .3s}
+.perks__logos li:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1px rgba(63,81,113,.25),0 16px 30px -20px rgba(36,48,74,.45)}
+.perks__logos img{width:100%;max-width:150px;height:auto}
+.perks__logos li.tp{background:#232323;box-shadow:none}
+.perks .link{min-height:44px}
+
+@media (min-width:760px){
+  .perks{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:28px 48px;padding:40px 44px;margin-top:clamp(64px,8vw,104px)}
+  .perks__logos li{min-height:120px}
+}
+
+/* TESTE (discreto): atendimento em casa e gestação no formato original, título e botão em evidência */
+.svcs__home{display:grid;gap:14px;justify-items:start;margin-top:10px;padding-top:26px;border-top:1px solid var(--line);font-size:16px;color:var(--ink-2)}
+.svcs__home h3{font-size:clamp(26px,6.4vw,32px);line-height:1.1;color:var(--navy);margin:0}
+.svcs__home p{margin:0;max-width:44ch}
+.svcs__home .btn{width:100%}
+.gest__head h3{font-size:clamp(32px,8vw,44px)!important;line-height:1.05}
+.gest__head p{margin:0;color:#DCE2EC;max-width:34ch}
+.gest__head .btn{width:100%}
+@media (min-width:760px){.svcs__home .btn,.gest__head .btn{width:auto}}
+
 @media (max-width:1100px){
   .menu a{padding:12px 10px;font-size:15px}
 }
@@ -676,10 +708,15 @@ footer a:hover{color:var(--cream);text-decoration:underline;text-underline-offse
           <li class="srow"><span class="srow__n" aria-hidden="true">03</span><div><h3>Movimento</h3><p>Pilates em sete modalidades, incluindo pré-natal, musculação terapêutica e LPF.</p></div><a class="srow__go" data-wa="Olá! Gostaria de agendar uma aula experimental." href="https://wa.me/5527998474159" target="_blank" rel="noopener"><span class="srow__lbl">Agendar</span><span class="sr"> movimento pelo WhatsApp</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
           <li class="srow"><span class="srow__n" aria-hidden="true">04</span><div><h3>Saúde integral</h3><p>Odontologia, nutrição, psicologia e podologia, no mesmo endereço.</p></div><a class="srow__go" data-wa="Olá! Gostaria de agendar uma consulta." href="https://wa.me/5527998474159" target="_blank" rel="noopener"><span class="srow__lbl">Agendar</span><span class="sr"> saúde integral pelo WhatsApp</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
         </ul>
-        <p class="svcs__home rv"><span><b>Também atendemos em casa.</b> Fisioterapia domiciliar para quem não pode vir até a clínica.</span><a class="link" data-wa="Olá! Gostaria de saber sobre a fisioterapia domiciliar." href="https://wa.me/5527998474159" target="_blank" rel="noopener">Consultar<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+        <div class="svcs__home rv">
+          <h3>Também atendemos <em>em casa.</em></h3>
+          <p>Fisioterapia domiciliar para quem não pode vir até a clínica. Envie seu bairro pelo WhatsApp e confirmamos o atendimento.</p>
+          <a class="btn btn--primary" data-wa="Olá! Gostaria de agendar fisioterapia domiciliar. Meu bairro é:" href="https://wa.me/5527998474159" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar em casa<span class="sr"> pelo WhatsApp</span></a>
+        </div>
       </div>
       <figure class="svcs__photo rv d1"><img src="img/estudio-espaldar.jpg" alt="Estúdio da clínica com cadillac, barrel, espaldar de madeira e faixas elásticas" width="960" height="720" loading="lazy"></figure>
     </div>
+
   </section>
 
   <!-- PILATES -->
@@ -702,7 +739,8 @@ footer a:hover{color:var(--cream);text-decoration:underline;text-underline-offse
       <div class="gest rv" aria-labelledby="h-gest">
         <div class="gest__head">
           <h3 id="h-gest">Pilates na <em>gestação</em></h3>
-          <a class="link" data-wa="Olá! Gostaria de saber sobre o pilates para gestantes." href="https://wa.me/5527998474159" target="_blank" rel="noopener">Aula para gestante<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <p>Movimento, saúde e bem-estar para você e seu bebê, com suporte fisioterapêutico.</p>
+          <a class="btn btn--light" data-wa="Olá! Gostaria de agendar uma aula de pilates para gestante." href="https://wa.me/5527998474159" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar aula para gestante<span class="sr"> pelo WhatsApp</span></a>
         </div>
         <ul class="gest__list">
           <li><b>Para você</b><span>Menos dores, melhor postura e mais equilíbrio.</span></li>
@@ -758,9 +796,17 @@ footer a:hover{color:var(--cream);text-decoration:underline;text-underline-offse
           </div>
         </div>
       </div>
-      <div class="plans rv">
-        <p>Aceitamos os seus benefícios de <span style="white-space:nowrap">bem-estar.</span></p>
-        <ul aria-label="Planos aceitos"><li><i style="--c:#E0522B" aria-hidden="true"></i>Gympass · Wellhub</li><li><i style="--c:#16A34A" aria-hidden="true"></i>TotalPass</li></ul>
+      <div class="perks rv">
+        <div>
+          <span class="tag">Benefícios aceitos</span>
+          <h3>Aceitamos <em>Wellhub e TotalPass.</em></h3>
+          <p>Use o benefício de bem-estar da sua empresa na clínica. Confirme pelo WhatsApp o que entra no seu plano.</p>
+          <a class="link" data-wa="Olá! Tenho Wellhub/TotalPass. Quais serviços entram no meu plano?" href="https://wa.me/5527998474159" target="_blank" rel="noopener">Confirmar meu plano<svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <ul class="perks__logos" aria-label="Planos aceitos">
+          <li><img src="img/logo-gympass.png" alt="Gympass, agora Wellhub" width="552" height="150" loading="lazy"></li>
+          <li class="tp"><img src="img/logo-totalpass.webp" alt="TotalPass" width="661" height="189" loading="lazy"></li>
+        </ul>
       </div>
     </div>
   </section>

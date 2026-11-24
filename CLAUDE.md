@@ -17,7 +17,12 @@ Para ver: extensão Live Server no VS Code, ou abrir o `index.html` no navegador
 ## Identidade visual (tirada do logo, dos destaques e dos posts do Instagram)
 - Azul do logo `#3F5171` (texto e botões), azul profundo `#28354F` (faixas escuras), bege do logo `#DED8CC`, creme de fundo `#F6F2EC`, areia `#ECE5DA`.
 - Sálvia `#95AEAB` (texto: `#4A6460`), menta `#AFC7B1`, terracota `#C69578` (texto: `#9A6447`).
-- Fontes: Fraunces (títulos, com itálico terracota nas palavras de destaque) e Figtree (texto). Google Fonts.
+- Fontes: Bodoni Moda (títulos, com itálico terracota nas palavras de destaque) e Jost (texto). Google Fonts. No celular, títulos com `opsz 11` e textos em peso 500, para não ficarem finos.
+
+## Busca local (SEO)
+- `<head>` com título, descrição, Open Graph (`share.jpg`, 1200x630, captura do topo) e bloco JSON-LD `MedicalClinic` (endereço, telefone, horário, serviços, Instagram).
+- Sem nota/avaliações no JSON-LD de propósito: o Google não aceita avaliações publicadas pela própria empresa.
+- `robots.txt` liberando tudo. Canonical, sitemap e endereços completos de imagem ficam comentados até existir domínio.
 - Arco e pontos que diminuem, como no logo. Fotos com cantos arredondados.
 - Contraste mínimo 4,5:1 em texto (já conferido).
 
@@ -30,4 +35,5 @@ Para ver: extensão Live Server no VS Code, ou abrir o `index.html` no navegador
 - Nome e função da profissional de jaleco branco (está como "Equipe clínica") e nome da dentista.
 - Autorização da paciente Cassia para o depoimento com o primeiro nome.
 - Frases curtas de cada serviço foram escritas como definições gerais; revisar com a clínica.
-- Domínio do site e publicação (Netlify, Vercel ou outro).
+- Domínio do site e publicação (Netlify, Vercel ou outro). Com o domínio: ativar canonical, criar sitemap.xml, trocar `share.jpg` e o logo do JSON-LD por URLs completas, e testar em search.google.com/test/rich-results.
+- Perfil da clínica no Google (Google Meu Negócio): mesmo nome, endereço, telefone e horário do site, com o link do site.
